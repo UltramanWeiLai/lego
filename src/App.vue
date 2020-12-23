@@ -1,6 +1,9 @@
 <template>
   <h1>慕课乐高标准模版</h1>
   <hello msg="hello world"/>
+  <a-button type="primary">
+    Primary
+  </a-button>
   <ul>
     <li>开箱即用</li>
     <li>typescript</li>
@@ -21,14 +24,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
