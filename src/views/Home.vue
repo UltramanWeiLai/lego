@@ -6,6 +6,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 import TemplateList from '../components/TemplateList.vue'
 const testData = [
   {id: 1, coverImg: 'https://static.imooc-lego.com/upload-files/screenshot-889755.png', title: '前端架构师直播海报'},
@@ -20,6 +21,10 @@ export default defineComponent({
     TemplateList
   },
   setup() {
+    const router = useRouter()
+    // setTimeout(() => {
+    //   router.push({name: 'template', params: { id: 1 }})
+    // }, 2000)
     return {
       testData
     }

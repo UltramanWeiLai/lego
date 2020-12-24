@@ -1,5 +1,6 @@
 <template>
 <div class="work-detail-container">
+  <pre>{{route}}</pre>
   <a-row type="flex" justify="center">
     <a-col :span="8" class="cover-img">
       <img src="https://static.imooc-lego.com/upload-files/screenshot-889755.png" alt="">
@@ -16,11 +17,13 @@
       <div ref="container"></div>
     </div>
     <div class="use-button">
-      <a-button
-        type="primary" size="large"
-      >
-        使用模版
-      </a-button>
+      <router-link to="/editor">
+        <a-button
+          type="primary" size="large"
+        >
+          使用模版
+        </a-button>
+      </router-link>
       <a-button
         size="large"
       >
@@ -34,7 +37,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
 export default defineComponent({
+  setup () {
+    const route = useRoute()
+    return {
+      route
+    }
+  }
 })
 </script>
 
