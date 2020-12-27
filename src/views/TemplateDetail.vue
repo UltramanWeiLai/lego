@@ -38,7 +38,8 @@
 import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
-import { GlobalDataProps, TemplateProps } from '../store/index'
+import { GlobalDataProps } from '../store/index'
+import { TemplateProps } from '../store/templates'
 export default defineComponent({
   setup () {
     const route = useRoute()
