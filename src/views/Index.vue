@@ -18,23 +18,23 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { useStore } from 'vuex'
-import { GlobalDataProps } from '../store/index'
-import UserProfile from '../components/UserProfile.vue'
-export default defineComponent({
-  name: 'Index',
-  components: {
-    UserProfile
-  },
-  setup () {
-    const store = useStore<GlobalDataProps>()
-    const user = computed(() => store.state.user)
-    return {
-      user
-    }
-  }
-})
+    import { computed, defineComponent } from 'vue'
+    import { useStore } from 'vuex'
+    import { GlobalDataProps } from '../store/index'
+    import UserProfile from '../components/UserProfile.vue'
+    export default defineComponent({
+        name: 'Index',
+        components: {
+            UserProfile
+        },
+        setup () {
+            const store = useStore<GlobalDataProps>()
+            const user = computed(() => store.state.user)
+            return {
+                user
+            }
+        }
+    })
 </script>
 
 <style>

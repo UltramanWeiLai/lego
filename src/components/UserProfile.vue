@@ -19,40 +19,40 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-import { message } from 'ant-design-vue'
-import { UserProps } from '../store/user'
+    import { defineComponent, PropType } from 'vue'
+    import { useStore } from 'vuex'
+    import { useRouter } from 'vue-router'
+    import { message } from 'ant-design-vue'
+    import { UserProps } from '../store/user'
 
-export default defineComponent({
-  name: 'user-profile',
-  props: {
-    user: {
-      type: Object as PropType<UserProps>,
-      required: true
-    }
-  },
-  setup () {
-    const store = useStore()
-    const router = useRouter()
-    const login = () => {
-      store.commit('login')
-      message.success('登录成功', 2)
-    }
-    const logout = () => {
-      store.commit('logout')
-      message.success('退出登录成功，2秒后跳转到首页', 2)
-      setTimeout(() => {
-        router.push('/')
-      }, 2000)
-    }
-    return {
-      login,
-      logout
-    }
-  }
-})
+    export default defineComponent({
+        name: 'user-profile',
+        props: {
+            user: {
+                type: Object as PropType<UserProps>,
+                required: true
+            }
+        },
+        setup () {
+            const store = useStore()
+            const router = useRouter()
+            const login = () => {
+                store.commit('login')
+                message.success('登录成功', 2)
+            }
+            const logout = () => {
+                store.commit('logout')
+                message.success('退出登录成功，2秒后跳转到首页', 2)
+                setTimeout(() => {
+                    router.push('/')
+                }, 2000)
+            }
+            return {
+                login,
+                logout
+            }
+        }
+    })
 </script>
 <style>
 .user-profile-dropdown {

@@ -7,15 +7,15 @@ export interface UserProps {
 }
 
 const user: Module<UserProps, GlobalDataProps> = {
-  mutations: {
-    login(state) {
-      state.isLogin = true
-      state.userName = 'viking'
-    },
-    logout(state) {
-      state.isLogin = false
-    }
-  }  
+    mutations: {
+        login(state) {
+            state.isLogin = true
+            state.userName = 'viking'
+        },
+        logout(state) {
+            state.isLogin = false
+        }
+    }  
 }
 
 export default user

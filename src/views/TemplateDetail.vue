@@ -35,23 +35,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { useStore } from 'vuex'
-import { GlobalDataProps } from '../store/index'
-import { TemplateProps } from '../store/templates'
-export default defineComponent({
-  setup () {
-    const route = useRoute()
-    const store = useStore<GlobalDataProps>()
-    const currentId = route.params.id as string
-    const template = computed<TemplateProps>(() => store.getters.getTemplateById(parseInt(currentId)))
-    return {
-      route,
-      template
-    }
-  }
-})
+    import { defineComponent, computed } from 'vue'
+    import { useRoute } from 'vue-router'
+    import { useStore } from 'vuex'
+    import { GlobalDataProps } from '../store/index'
+    import { TemplateProps } from '../store/templates'
+    export default defineComponent({
+        setup () {
+            const route = useRoute()
+            const store = useStore<GlobalDataProps>()
+            const currentId = route.params.id as string
+            const template = computed<TemplateProps>(() => store.getters.getTemplateById(parseInt(currentId)))
+            return {
+                route,
+                template
+            }
+        }
+    })
 </script>
 
 <style scoped>
